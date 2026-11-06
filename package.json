@@ -1,0 +1,33 @@
+{
+  "name": "kinship-atlas",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run build && wrangler dev --ip 127.0.0.1",
+    "build": "tsc --noEmit -p tsconfig.app.json && tsc --noEmit -p tsconfig.worker.json && vite build",
+    "deploy": "npm run build && wrangler deploy",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "astronomy-engine": "^2.1.19",
+    "lucide-react": "1.38.0",
+    "lunar-typescript": "1.8.6",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "xuantian-bazi": "^0.2.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@vitejs/plugin-react": "6.1.1",
+    "typescript": "7.0.2",
+    "vite": "8.2.2",
+    "wrangler": "4.127.1"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  }
+}
